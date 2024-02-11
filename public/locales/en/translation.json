@@ -1,0 +1,11 @@
+{
+	"main page title": "Main Page",
+	"title": "Welcome to react using react-i18next",
+	"page-error": "An unexpected error occurred",
+	"refresh-page": "Refresh the page",
+	"description": {
+		"part1": "To get started, edit <1>src/App.js</1> and save to reload.",
+		"part2": "Switch language between english and german using buttons above."
+	},
+	"entry": "entry"
+}

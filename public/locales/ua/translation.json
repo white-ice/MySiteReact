@@ -1,0 +1,11 @@
+{
+	"main page title": "Головна сторінка",
+	"title": "Welcome to react using react-i18next",
+	"page-error": "Відбулася непередбачена помилка",
+	"refresh-page": "Оновити сторінку",
+	"description": {
+		"part1": "To get started, edit <1>src/App.js</1> and save to reload.",
+		"part2": "Switch language between english and german using buttons above."
+	},
+	"entry": "Вхід"
+}

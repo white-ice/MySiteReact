@@ -1,0 +1,16 @@
+.login {
+	&__form {
+		display: flex;
+		flex-direction: column;
+		width: 400px;
+	}
+
+	&__btn {
+		margin-top: 15px;
+		margin-left: auto;
+	}
+}
+
+.input {
+	margin-top: 10px;
+}

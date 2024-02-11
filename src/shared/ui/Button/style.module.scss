@@ -1,0 +1,25 @@
+.btn {
+	background-color: transparent;
+	border-radius: 0;
+	color: var(--btn-color);
+	fill: var(--btn-color);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+
+	&__primary {
+		background-color: var(--btn-bg);
+		border-radius: 5px;
+		color: var(--btn-color);
+		fill: var(--btn-color);
+		padding: 10px 15px;
+	}
+
+	&__circle {
+		border-radius: 50%;
+		height: 32px;
+		min-width: 32px;
+		padding: 0;
+	}
+}

@@ -1,0 +1,73 @@
+@import 'reset';
+@import 'variables/global';
+@import 'themes/light';
+@import 'themes/dark';
+
+body {
+	background-color: var(--bg-color);
+	color: var(--primary-color);
+}
+
+.app {
+	background: url('./images/site-bg.png') no-repeat center bottom;
+	background-size: cover;
+
+	h1 {
+		font: var(--font-m);
+		font-size: 40px;
+	}
+}
+
+.app-grid {
+	/* Задає висоту для header, content і footer */
+	display: grid;
+	grid-template-areas:
+		'header header'
+		'sidebar content'
+		'footer footer';
+	grid-template-columns: 300px 1fr;
+
+	/* Задає ширину для header і sidebar */
+	grid-template-rows: auto 1fr auto;
+	height: 100vh;
+}
+
+.app-header {
+	background-color: var(--primary-color);
+	grid-area: header;
+	padding-left: var(--padding-default);
+	padding-right: var(--padding-default);
+
+	// .app-header__container
+	&__container {
+		height: var(--header-height);
+		padding: 8px 15px;
+	}
+
+}
+
+.app-logo {
+	color: var(--light-color);
+}
+
+.app-sidebar {
+	grid-area: sidebar;
+}
+
+.app-content {
+	grid-area: content;
+
+	&__container {
+		max-width: 100%;
+		height: 100%;
+		padding: var(--padding-default);
+	}
+}
+
+.app-footer {
+	grid-area: footer;
+}
+
+.col {
+	display: flex;
+}

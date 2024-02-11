@@ -1,0 +1,1 @@
+export { ModalForm as AuthServerForm } from './server';

@@ -1,0 +1,21 @@
+.navbar {
+	background-color: var(--primary-color);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 15px;
+	height: 100%;
+
+
+	&__links {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+	}
+
+	&__buttons {
+		display: flex;
+		align-items: center;
+		gap: 15px;
+	}
+}
