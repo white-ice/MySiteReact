@@ -1,5 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames'
-import cls from './AppLink.module.scss'
+import cls from './style.module.scss'
 import { Link, LinkProps } from 'react-router-dom';
 import { FC } from 'react';
 
@@ -16,7 +16,7 @@ interface AppLinkProps extends LinkProps {
 	classNameBlock?: string;
 	theme?: AppLinkTheme;
 }
-const AppLink: FC<AppLinkProps> = (props) => {
+export const AppLink: FC<AppLinkProps> = (props) => {
 	const {
 		to,
 		className,
@@ -45,4 +45,3 @@ const AppLink: FC<AppLinkProps> = (props) => {
 
 	)
 }
-export default AppLink

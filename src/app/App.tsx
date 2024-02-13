@@ -3,10 +3,9 @@ import { Suspense, useEffect } from 'react';
 import AppRouter from './providers/router';
 import { Theme, useTheme } from './providers/ThemeProvider';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Navbar } from 'widgets/Navbar';
-import Sidebar from 'widgets/Sidebar/ui/Sidebar';
 import { ErrorBoundary } from './providers/ErrorBoundary';
 import './styles/main.scss';
+import { Navbar } from 'widgets/Navbar';
 
 const App = () => {
 	const { theme } = useTheme()
@@ -18,14 +17,11 @@ const App = () => {
 
 	return (
 		<Suspense fallback="">
-			<div className={classNames('app app-grid')}>
+			<div className={classNames('app')}>
 				<header className="app-header">
-					<div className="app-header__container">
-						<Navbar />
-					</div>
+					<Navbar />
 				</header>
 				<aside className="app-sidebar">
-					<Sidebar />
 				</aside>
 				<main className="app-content">
 					<div className="app-content__container">

@@ -21,3 +21,15 @@
 .dark {
 	color: var(--dark-color);
 }
+
+.navbar__link {
+	position: relative;
+
+	&::after {
+		content: '/';
+		position: absolute;
+		right: 0;
+		font-size: 18px;
+		color: var(--light-color);
+	}
+}
