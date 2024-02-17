@@ -14,12 +14,16 @@ import { AppLink, AppLinkTheme, Logo, LogoVariant } from "shared";
 
 const navbarLinks = [
 	{
-		url: RoutePath.main,
-		name: 'Home'
+		url: RoutePath.work,
+		name: 'Work'
 	},
 	{
-		url: RoutePath.about,
-		name: 'About'
+		url: RoutePath.info,
+		name: 'Info'
+	},
+	{
+		url: RoutePath.connect,
+		name: 'Connect'
 	}
 ]
 

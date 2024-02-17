@@ -9,7 +9,7 @@ interface SidebarProps {
 	className?: string;
 }
 const Sidebar = ({ className }: SidebarProps) => {
-	const { t } = useTranslation('about')
+	const { t } = useTranslation()
 
 	return (
 		<div data-testid="sidebar" className={classNames(cls.sidebar, {}, [className])}>
@@ -25,7 +25,7 @@ const Sidebar = ({ className }: SidebarProps) => {
 					className={classNames(cls.sidebar__link, {}, [])}
 					classNameBlock={classNames(cls.sidebar__item, {}, [])}
 					theme={AppLinkTheme.PRIMARY}
-					to={RoutePath.about}>
+					to={RoutePath.work}>
 					{t('About page')}
 				</AppLink>
 			</div>

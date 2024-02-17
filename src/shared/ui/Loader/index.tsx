@@ -15,7 +15,6 @@ interface LoaderProps {
 
 export const Loader = (props: LoaderProps) => {
 	const { className, text = '', theme } = props
-
 	const [displayText, setDisplayText] = useState('');
 	const [index, setIndex] = useState(0);
 
