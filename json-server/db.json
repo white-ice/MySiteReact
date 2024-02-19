@@ -16,5 +16,9 @@
   ],
   "profile": {
     "name": "typicode"
+  },
+  "work": {
+    "title": "Work",
+    "text": "another comment about post 1"
   }
 }
