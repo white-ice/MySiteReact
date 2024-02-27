@@ -1,13 +1,17 @@
-import { configureStore } from '@reduxjs/toolkit';
-import { StateSchema } from '../types';
-import { counterReducer } from 'features/counter';
-import { userReducer } from 'entities/User';
+import { configureStore } from "@reduxjs/toolkit";
+import { StateSchema } from "../types";
+import { counterReducer } from "features/counter";
+import { userReducer } from "entities/User";
+import { DataPageReducer } from "widgets/ContentBlock/model/slice";
+import { NavbarReducer } from "widgets/Navbar";
 
 export function createReduxStore(initialState?: StateSchema) {
   return configureStore<StateSchema>({
     reducer: {
       counter: counterReducer,
       user: userReducer,
+      content: DataPageReducer,
+      navbar: NavbarReducer,
     },
     preloadedState: initialState,
     devTools: __IS_DEV__,

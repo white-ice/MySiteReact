@@ -1,16 +1,17 @@
-import { classNames } from "shared/lib/classNames/classNames";
 import cls from "./style.module.scss";
-import { fetchData } from "shared/api";
 import { useEffect, useState } from "react";
-import { Loader, LoaderTheme, PageContent, TypingText } from "shared";
+import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
+import { classNames } from "shared/lib/classNames/classNames";
+import { fetchData } from "shared/api";
+import { Loader, LoaderTheme, PageContent, TypingText } from "shared";
+import {
+  isLoaderDataPage,
+  DataPageActions,
+  getContentDataPage,
+} from "../index";
 
-type DataPage = {
-  title: string;
-  text: string;
-};
-
-interface ContentBlockProps {
+export interface ContentBlockProps {
   className?: string;
   urlPage: string;
 }
@@ -18,8 +19,9 @@ interface ContentBlockProps {
 export const ContentBlock = (props: ContentBlockProps) => {
   const { t } = useTranslation();
   const { className, urlPage } = props;
-  const [data, setData] = useState<DataPage>(null);
-  const [loading, setLoading] = useState(true);
+  const isLoader = useSelector(isLoaderDataPage);
+  const data = useSelector(getContentDataPage);
+  const dispatch = useDispatch();
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -28,18 +30,18 @@ export const ContentBlock = (props: ContentBlockProps) => {
 
   const getData = async () => {
     try {
-      const responseData = await fetchData({ page: urlPage });
-      setData(responseData);
+      const responseData = await fetchData({ key: urlPage });
+      dispatch(DataPageActions.setContent(responseData));
       setTimeout(() => {
-        setLoading(false);
+        dispatch(DataPageActions.onLoading());
       }, 1000);
     } catch (error) {
       setError(error.message);
-      setLoading(false);
+      dispatch(DataPageActions.onLoading());
     }
   };
 
-  if (loading) {
+  if (isLoader) {
     return (
       <div className={classNames(cls["content-block"], {}, [className])}>
         <Loader text={t("Load main page title")} theme={LoaderTheme.TEXT} />

@@ -1,21 +1,21 @@
 import axios from "axios";
 
 type fetchData = {
-  page: string;
+  key: string;
   method?: string;
   data?: null;
   headers?: {};
 };
 
 export const fetchData = async ({
-  page,
+  key,
   method = "GET",
   data,
   headers,
 }: fetchData) => {
   try {
     const response = await axios({
-      url: `http://localhost:3000/${page}`,
+      url: `http://localhost:3000/${key}`,
       method,
       data,
       headers,

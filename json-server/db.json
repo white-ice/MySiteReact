@@ -20,5 +20,27 @@
   "work": {
     "title": "Work",
     "text": "another comment about post 1"
-  }
+  },
+ "info": {
+   "title": "Info",
+   "text": "Text info page"
+ },
+ "connect": {
+   "title": "Connect",
+   "text": "Text connect page"
+ },
+ "routers": [
+   {
+     "url": "work",
+     "name": "Work"
+   },
+   {
+     "url": "info",
+     "name": "Info"
+   },
+   {
+    "url": "connect",
+    "name": "Connect"
+   }
+ ]
 }
