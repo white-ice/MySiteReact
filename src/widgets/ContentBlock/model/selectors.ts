@@ -9,6 +9,11 @@ export const isLoaderDataPage = createSelector(
   (content: DataPageSchema) => content.isLoading,
 );
 
+export const isVisibleContent = createSelector(
+  getDataPage,
+  (content: DataPageSchema) => content.visibleContent,
+);
+
 export const getContentDataPage = createSelector(
   getDataPage,
   (content: DataPageSchema) => ({

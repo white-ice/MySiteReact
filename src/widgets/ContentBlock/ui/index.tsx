@@ -9,6 +9,7 @@ import {
   isLoaderDataPage,
   DataPageActions,
   getContentDataPage,
+  // isVisibleContent,
 } from "../index";
 
 export interface ContentBlockProps {
@@ -20,6 +21,7 @@ export const ContentBlock = (props: ContentBlockProps) => {
   const { t } = useTranslation();
   const { className, urlPage } = props;
   const isLoader = useSelector(isLoaderDataPage);
+  // const isVisible = useSelector(isVisibleContent);
   const data = useSelector(getContentDataPage);
   const dispatch = useDispatch();
   const [error, setError] = useState(null);
@@ -34,6 +36,7 @@ export const ContentBlock = (props: ContentBlockProps) => {
       dispatch(DataPageActions.setContent(responseData));
       setTimeout(() => {
         dispatch(DataPageActions.onLoading());
+        dispatch(DataPageActions.onVisible());
       }, 1000);
     } catch (error) {
       setError(error.message);

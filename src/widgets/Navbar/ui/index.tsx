@@ -7,7 +7,11 @@ import { fetchData } from "shared/api";
 import { NavbarActions } from "../model/slice";
 import { useDispatch, useSelector } from "react-redux";
 import { getNavbarItems } from "../model/selectors";
-import { DataPageActions } from "widgets/ContentBlock";
+import {
+  DataPageActions,
+  isLoaderDataPage,
+  isVisibleContent,
+} from "widgets/ContentBlock";
 import { useNavigate, useLocation } from "react-router-dom";
 
 interface NavbarProps {
@@ -19,6 +23,8 @@ export const Navbar = (props: NavbarProps) => {
   const { className } = props;
   const dispatch = useDispatch();
   const { items } = useSelector(getNavbarItems);
+  const isVisible = useSelector(isVisibleContent);
+  const isLoader = useSelector(isLoaderDataPage);
   const navigate = useNavigate();
   const location = useLocation();
   const [error, setError] = useState(null);
@@ -41,13 +47,29 @@ export const Navbar = (props: NavbarProps) => {
     e.preventDefault();
     const target = e.target as HTMLAnchorElement;
     const href = target.getAttribute("href");
-    if (location.pathname != href) {
-      dispatch(DataPageActions.onLoading());
-      navigate(href);
-    }
-    console.log({ location });
-  };
 
+    switch (href) {
+      case "/":
+        if (isLoader) dispatch(DataPageActions.onLoading());
+        if (isVisible) dispatch(DataPageActions.onVisible());
+        setTimeout(() => {
+          navigate(href);
+        }, 1000);
+        break;
+      default:
+        if (location.pathname != href && location.pathname != "/") {
+          dispatch(DataPageActions.onVisible());
+          setTimeout(() => {
+            dispatch(DataPageActions.onLoading());
+            navigate(href);
+          }, 1000);
+        } else {
+          dispatch(DataPageActions.onLoading());
+          navigate(href);
+        }
+    }
+  };
+  // Error
   if (error) {
     return <div>Error: {error}</div>;
   }
@@ -58,7 +80,9 @@ export const Navbar = (props: NavbarProps) => {
       className={classNames(cls.navbar, {}, [className])}
     >
       <div className="app-logo">
-        <Logo theme={LogoVariant.TEXT}>{t("My/static/work")}</Logo>
+        <Logo onLinkClick={handleLink} theme={LogoVariant.TEXT}>
+          {t("My/static/work")}
+        </Logo>
       </div>
       <div className={classNames(cls.navbar__links)}>
         {items?.length

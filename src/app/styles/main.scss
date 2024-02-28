@@ -107,3 +107,36 @@ body {
 		text-decoration: inherit;
 	}
 }
+
+// Animation style
+.show {
+  animation: slidUp 1s cubic-bezier(0.755, 0.05, 0.855, 0.06) 0ms forwards;
+}
+
+.hidden {
+  animation: slidDoun 1s cubic-bezier(0.755, 0.05, 0.855, 0.06) 0ms forwards;
+}
+
+@keyframes slidUp {
+  1% {
+    opacity: 1;
+    transform: translateY(100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes slidDoun {
+  1% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(100%);
+  }
+}

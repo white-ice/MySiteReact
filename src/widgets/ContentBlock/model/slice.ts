@@ -2,6 +2,7 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { DataPageSchema } from "./types";
 
 const initialState: DataPageSchema = {
+  visibleContent: false,
   isLoading: true,
   title: "Title",
   text: "Text",
@@ -12,6 +13,9 @@ export const DataPageSlice = createSlice({
   name: "contentPage",
   initialState,
   reducers: {
+    onVisible: (state) => {
+      state.visibleContent = !state.visibleContent;
+    },
     onLoading: (state) => {
       state.isLoading = !state.isLoading;
     },
