@@ -64,7 +64,7 @@ export const Navbar = (props: NavbarProps) => {
             navigate(href);
           }, 1000);
         } else {
-          dispatch(DataPageActions.onLoading());
+          if (!isLoader) dispatch(DataPageActions.onLoading());
           navigate(href);
         }
     }

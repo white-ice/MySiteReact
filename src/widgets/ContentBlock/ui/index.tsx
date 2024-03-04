@@ -21,7 +21,6 @@ export const ContentBlock = (props: ContentBlockProps) => {
   const { t } = useTranslation();
   const { className, urlPage } = props;
   const isLoader = useSelector(isLoaderDataPage);
-  // const isVisible = useSelector(isVisibleContent);
   const data = useSelector(getContentDataPage);
   const dispatch = useDispatch();
   const [error, setError] = useState(null);
@@ -62,7 +61,7 @@ export const ContentBlock = (props: ContentBlockProps) => {
         <h1 className={classNames(cls["content-block__title"])}>
           <TypingText text={data.title} delay={1000} />
         </h1>
-        <p>
+        <p className={classNames(cls["content-block__p"])}>
           <TypingText text={data.text} delay={2000} />
         </p>
       </PageContent>

@@ -23,7 +23,7 @@
   },
  "info": {
    "title": "Info",
-   "text": "<p>Over 10 years of experience in web development and website layout on various CMS platforms, I decided to expand my knowledge and transition to frontend development more than a year and a half ago. During this period, I participated in the development of two React projects in a company and independently developed a project using Vue.js. All three projects represent different business domains with varying scopes and scales of work. Additionally, there was a frontend project for a cryptocurrency exchange, involving a complete design overhaul and 160 hours of work.</p>"
+   "text": "Over 10 years of experience in web development and website layout on various CMS platforms, I decided to expand my knowledge and transition to frontend development more than a year and a half ago. During this period, I participated in the development of two React projects in a company and independently developed a project using Vue.js. All three projects represent different business domains with varying scopes and scales of work. Additionally, there was a frontend project for a cryptocurrency exchange, involving a complete design overhaul and 160 hours of work."
  },
  "connect": {
    "title": "Connect",

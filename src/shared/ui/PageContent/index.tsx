@@ -12,7 +12,6 @@ export const PageContent: FC<PageContentProps> = (props) => {
   const { children, className } = props;
   const isVisible = useSelector(isVisibleContent);
 
-  console.log({ isVisible });
   return (
     <div
       className={classNames(

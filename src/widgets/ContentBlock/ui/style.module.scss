@@ -1,1 +1,11 @@
-.content-page {}
+.content-block {
+  &__title {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  &__p {
+    max-width: 1200px;
+    font-size: 14px;
+  }
+}
