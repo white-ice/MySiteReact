@@ -1,0 +1,34 @@
+.content-scrollable {
+  height: 100%;
+  position: relative;
+  scrollbar-width: thin;
+  scrollbar-color: red green;
+
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+    border: 3px solid #f1f1f1;
+
+    &:hover {
+      background: #555;
+    }
+  }
+
+  &__v {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  &__h {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}

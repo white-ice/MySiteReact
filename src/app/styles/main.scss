@@ -110,14 +110,14 @@ body {
 
 // Animation style
 .show {
-  animation: slidUp 1s cubic-bezier(0.755, 0.05, 0.855, 0.06) 0ms forwards;
+  animation: slideUp 1s cubic-bezier(0.755, 0.05, 0.855, 0.06) 0ms forwards;
 }
 
 .hidden {
-  animation: slidDoun 1s cubic-bezier(0.755, 0.05, 0.855, 0.06) 0ms forwards;
+  animation: slideDoun 1s cubic-bezier(0.755, 0.05, 0.855, 0.06) 0ms forwards;
 }
 
-@keyframes slidUp {
+@keyframes slideUp {
   1% {
     opacity: 1;
     transform: translateY(100%);
@@ -129,7 +129,7 @@ body {
   }
 }
 
-@keyframes slidDoun {
+@keyframes slideDoun {
   1% {
     opacity: 1;
     transform: translateY(0%);

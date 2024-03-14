@@ -1,5 +1,7 @@
 export { AppLink, AppLinkTheme } from "./ui/AppLink";
 export { Button, ThemeButton } from "./ui/Button";
+export { Card } from "./ui/Card";
+export { ContentScrollable, ThemeScroll } from "./ui/ContentScrollable";
 export { Input } from "./ui/Input";
 export { Loader, LoaderTheme } from "./ui/Loader";
 export { Logo, LogoVariant } from "./ui/Logo";

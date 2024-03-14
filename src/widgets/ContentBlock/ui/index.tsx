@@ -11,6 +11,8 @@ import {
   getContentDataPage,
   // isVisibleContent,
 } from "../index";
+import { ContentScrollable, ThemeScroll } from "shared";
+import { Projects } from "features/projects";
 
 export interface ContentBlockProps {
   className?: string;
@@ -64,6 +66,11 @@ export const ContentBlock = (props: ContentBlockProps) => {
         <p className={classNames(cls["content-block__p"])}>
           <TypingText text={data.text} delay={2000} />
         </p>
+        {urlPage === "work" && (
+          <ContentScrollable theme={ThemeScroll.HORIZONTAL}>
+            <Projects />
+          </ContentScrollable>
+        )}
       </PageContent>
     </div>
   );

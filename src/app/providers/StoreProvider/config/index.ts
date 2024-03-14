@@ -4,6 +4,8 @@ import { counterReducer } from "features/counter";
 import { userReducer } from "entities/User";
 import { DataPageReducer } from "widgets/ContentBlock/model/slice";
 import { NavbarReducer } from "widgets/Navbar";
+import { ProjectsReducer } from "features/projects/model/slice";
+import { LoadingReducer } from "entities/IsLoading";
 
 export function createReduxStore(initialState?: StateSchema) {
   return configureStore<StateSchema>({
@@ -12,6 +14,8 @@ export function createReduxStore(initialState?: StateSchema) {
       user: userReducer,
       content: DataPageReducer,
       navbar: NavbarReducer,
+      projects: ProjectsReducer,
+      loading: LoadingReducer,
     },
     preloadedState: initialState,
     devTools: __IS_DEV__,
