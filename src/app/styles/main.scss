@@ -14,11 +14,11 @@ body {
 }
 
 .app {
-	background: url('./images/site-bg.png') no-repeat center center;
-	background-size: cover;
-	background-color: #002432;
-	height: 100vh;
+	// background: url('./images/site-bg.png') no-repeat center center;
+	// background-size: cover;
+	// background-color: #002432;
 	color: var(--text-color);
+	height: 100vh;
 
 	// h1 {
 	// 	font: var(--font-m);
@@ -41,8 +41,8 @@ body {
 		width: 100%;
 		height: 100vh;
 		position: absolute;
-		background-color: #002432;
-		opacity: .8;
+		background-color: #021218;
+		// opacity: .8;
 		z-index: 1;
 	}
 }
@@ -77,6 +77,8 @@ body {
 
 .app-logo {
 	color: var(--light-color);
+	position: relative;
+	z-index: 2;
 }
 
 .app-sidebar {
@@ -110,33 +112,33 @@ body {
 
 // Animation style
 .show {
-  animation: slideUp 1s cubic-bezier(0.755, 0.05, 0.855, 0.06) 0ms forwards;
+	animation: slideUp 1s cubic-bezier(0.755, 0.05, 0.855, 0.06) 0ms forwards;
 }
 
 .hidden {
-  animation: slideDoun 1s cubic-bezier(0.755, 0.05, 0.855, 0.06) 0ms forwards;
+	animation: slideDoun 1s cubic-bezier(0.755, 0.05, 0.855, 0.06) 0ms forwards;
 }
 
 @keyframes slideUp {
-  1% {
-    opacity: 1;
-    transform: translateY(100%);
-  }
+	1% {
+		opacity: 1;
+		transform: translateY(100%);
+	}
 
-  100% {
-    opacity: 1;
-    transform: translateY(0%);
-  }
+	100% {
+		opacity: 1;
+		transform: translateY(0%);
+	}
 }
 
 @keyframes slideDoun {
-  1% {
-    opacity: 1;
-    transform: translateY(0%);
-  }
+	1% {
+		opacity: 1;
+		transform: translateY(0%);
+	}
 
-  100% {
-    opacity: 1;
-    transform: translateY(100%);
-  }
+	100% {
+		opacity: 1;
+		transform: translateY(100%);
+	}
 }

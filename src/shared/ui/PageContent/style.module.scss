@@ -1,6 +1,7 @@
 .page {
   &__wrap {
-    height: 50vh;
+    height: auto;
+    min-height: 300px;
     background-color: var(--dark-color);
     padding: 20px 30px;
     position: fixed;
@@ -10,4 +11,3 @@
     opacity: 0;
   }
 }
-

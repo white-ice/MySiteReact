@@ -1,4 +1,5 @@
 export { AppLink, AppLinkTheme } from "./ui/AppLink";
+export { BgMain } from "./ui/BgMain";
 export { Button, ThemeButton } from "./ui/Button";
 export { Card } from "./ui/Card";
 export { ContentScrollable, ThemeScroll } from "./ui/ContentScrollable";

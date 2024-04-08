@@ -1,6 +1,13 @@
 {
   "projects": [
     {
+      "id": "0",
+      "title": "test",
+      "description": "Test description",
+      "text": "Test text",
+      "img": "./images/project-0.png"
+    },
+    {
       "id": "1",
       "title": "test",
       "description": "Test description",

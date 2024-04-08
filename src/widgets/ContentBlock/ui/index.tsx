@@ -6,13 +6,15 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { fetchData } from "shared/api";
 import { Loader, LoaderTheme, PageContent, TypingText } from "shared";
 import {
-  isLoaderDataPage,
+  // isLoaderDataPage,
   DataPageActions,
   getContentDataPage,
   // isVisibleContent,
 } from "../index";
 import { ContentScrollable, ThemeScroll } from "shared";
 import { Projects } from "features/projects";
+import { getProjects } from "features/projects/model/selectors";
+import { LoadingActions, isLoader } from "entities/IsLoading";
 
 export interface ContentBlockProps {
   className?: string;
@@ -22,8 +24,10 @@ export interface ContentBlockProps {
 export const ContentBlock = (props: ContentBlockProps) => {
   const { t } = useTranslation();
   const { className, urlPage } = props;
-  const isLoader = useSelector(isLoaderDataPage);
+  // const isLoader = useSelector(isLoaderDataPage);
+  const isLoading = useSelector(isLoader);
   const data = useSelector(getContentDataPage);
+  const projects = useSelector(getProjects);
   const dispatch = useDispatch();
   const [error, setError] = useState(null);
 
@@ -34,18 +38,22 @@ export const ContentBlock = (props: ContentBlockProps) => {
   const getData = async () => {
     try {
       const responseData = await fetchData({ key: urlPage });
+      if (!isLoading) dispatch(LoadingActions.onLoading());
+
       dispatch(DataPageActions.setContent(responseData));
       setTimeout(() => {
-        dispatch(DataPageActions.onLoading());
+        dispatch(LoadingActions.onLoading());
+        // dispatch(DataPageActions.onLoading());
         dispatch(DataPageActions.onVisible());
       }, 1000);
     } catch (error) {
       setError(error.message);
-      dispatch(DataPageActions.onLoading());
+      dispatch(LoadingActions.onLoading());
+      // dispatch(DataPageActions.onLoading());
     }
   };
 
-  if (isLoader) {
+  if (isLoading) {
     return (
       <div className={classNames(cls["content-block"], {}, [className])}>
         <Loader text={t("Load main page title")} theme={LoaderTheme.TEXT} />
@@ -68,7 +76,7 @@ export const ContentBlock = (props: ContentBlockProps) => {
         </p>
         {urlPage === "work" && (
           <ContentScrollable theme={ThemeScroll.HORIZONTAL}>
-            <Projects />
+            <Projects delay={3000} elementsLength={projects?.items?.length} />
           </ContentScrollable>
         )}
       </PageContent>

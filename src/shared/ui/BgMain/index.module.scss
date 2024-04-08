@@ -1,0 +1,73 @@
+.bg-main {
+
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.bg-icons {
+	width: 200vw;
+	height: 200vh;
+	position: absolute;
+	top: -60%;
+	left: -50%;
+	transform: rotate(-30deg);
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+	z-index: 0;
+	overflow: hidden;
+}
+
+@keyframes animate {
+
+	0%,
+	100% {
+		transform: translateX(-100vw);
+	}
+
+	50% {
+		transform: translateX(0vw);
+	}
+}
+
+@keyframes animateRevers {
+
+	0%,
+	100% {
+		transform: translateX(0vw);
+	}
+
+	50% {
+		transform: translateX(-100vw);
+	}
+}
+
+.container-icon {
+	display: flex;
+	gap: 0.5em;
+	font-size: 4em;
+	width: 200vw;
+	animation: animate 80s linear infinite;
+
+	&:nth-child(even) {
+		animation: animateRevers 80s linear infinite;
+	}
+
+	i {
+		cursor: pointer;
+		user-select: none;
+		transition: 2s;
+		color: transparent;
+		opacity: 0.35;
+		-webkit-text-stroke: 1px #0f0;
+
+		&:hover {
+			color: rgb(0, 179, 0);
+			transition: 0s;
+			opacity: 1;
+			-webkit-text-stroke: 1px transparent;
+			text-shadow: 0 0 120px rgb(0, 179, 0);
+		}
+	}
+}

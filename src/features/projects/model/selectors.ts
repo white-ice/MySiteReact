@@ -10,10 +10,10 @@ export const getProjectsData = createSelector(
     items: projects.items,
   }),
 );
-// export const isLoaderProjects = createSelector(
-//   getProjects,
-//   (content: ProjectsSchema) => content.isLoading,
-// );
+export const isLoaderProjects = createSelector(
+  getProjects,
+  (projects: ProjectsSchema) => projects.isLoading,
+);
 
 // export const isVisibleContent = createSelector(
 //   getProjects,

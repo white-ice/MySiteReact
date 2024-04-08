@@ -1,17 +1,18 @@
 import { ProjectData } from "features/projects/";
 import cls from "./style.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
-import { memo } from "react";
+import { FC, memo } from "react";
 
 interface CardProps {
   className?: string;
   item: ProjectData;
+  onClick?: () => void;
 }
 
-export const Card = memo((props: CardProps) => {
-  const { className, item } = props;
+export const Card: FC<CardProps> = memo((props) => {
+  const { className, item, onClick } = props;
   return (
-    <div className={classNames(cls.card, {}, [className])}>
+    <div onClick={onClick} className={classNames(cls.card, {}, [className])}>
       <div className={classNames(cls.card__img)}>
         <img src={item.img} />
       </div>

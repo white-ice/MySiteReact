@@ -1,19 +1,18 @@
 .content-scrollable {
-  height: 100%;
   position: relative;
   scrollbar-width: thin;
-  scrollbar-color: red green;
+  scrollbar-color: #fff #000;
 
   &::-webkit-scrollbar {
     width: 12px;
   }
 
   &::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: dark;
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: #888;
+    background-color: white;
     border-radius: 10px;
     border: 3px solid #f1f1f1;
 
@@ -23,12 +22,12 @@
   }
 
   &__v {
-    overflow-x: auto;
-    overflow-y: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 
   &__h {
-    overflow-y: auto;
-    overflow-x: hidden;
+    overflow-y: hidden;
+    overflow-x: auto;
   }
 }

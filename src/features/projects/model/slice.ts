@@ -1,16 +1,20 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { ProjectsSchema } from "./type";
+import { ProjectData, ProjectsSchema } from "./type";
 
 const initialState: ProjectsSchema = {
   items: [],
+  isLoading: true,
 };
 
 export const ProjectsSlice = createSlice({
   name: "projects",
   initialState,
   reducers: {
-    setProjectsData: (state, action: PayloadAction<ProjectsSchema>) => {
-      state.items = action.payload.items;
+    setProjectsData: (state, action: PayloadAction<ProjectData[]>) => {
+      state.items = action.payload;
+    },
+    onLoading: (state) => {
+      state.isLoading = !state.isLoading;
     },
   },
 });

@@ -7,6 +7,6 @@ export interface ProjectData {
 }
 export interface ProjectsSchema {
   items: ProjectData[];
-  // isLoading: boolean;
+  isLoading: boolean;
   // error?: string;
 }

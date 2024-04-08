@@ -6,6 +6,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { ErrorBoundary } from './providers/ErrorBoundary';
 import './styles/main.scss';
 import { Navbar } from 'widgets/Navbar';
+import { BgMain } from 'shared';
 
 const App = () => {
 	const { theme } = useTheme()
@@ -18,18 +19,20 @@ const App = () => {
 	return (
 		<Suspense fallback="">
 			<div className={classNames('app')}>
-				<header className="app-header">
-					<Navbar />
-				</header>
-				<aside className="app-sidebar">
-				</aside>
-				<main className="app-content">
-					<div className="app-content__container">
-						<ErrorBoundary>
-							<AppRouter />
-						</ErrorBoundary>
-					</div>
-				</main>
+				<BgMain>
+					<header className="app-header">
+						<Navbar />
+					</header>
+					<aside className="app-sidebar">
+					</aside>
+					<main className="app-content">
+						<div className="app-content__container">
+							<ErrorBoundary>
+								<AppRouter />
+							</ErrorBoundary>
+						</div>
+					</main>
+				</BgMain>
 			</div>
 		</Suspense>
 	)
